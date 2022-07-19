@@ -39,5 +39,5 @@ class YaUploader:
 if __name__ == '__main__':
 
    # ya.upload_file_to_disk(disk_file_path= 'new_file', file_name= my_file)
- 
+
     #result = uploader.upload(path_to_file)
