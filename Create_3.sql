@@ -16,20 +16,14 @@ id_track int,
 foreign key (id_collection) references collection_name (id_collection),
 foreign key (id_track) references track_name (id_track));
 
-create table track_musician(
-id_musician int,
-id_track int,
-foreign key (id_musician) references musician_name (id_musician),
-foreign key (id_track) references track_name (id_track));
 
 create table album_name(
 id_album serial primary key,
+id_track int not null,
 album_name varchar (100) not null,
-yaer  int2 not null);
+yaer  int2 not null),
+foreign key (id_track) references track_name (id_track));
 
-drop table album_name cascade
-
-drop table album_musician  cascade
 
 create table album_musician(
 id_album int,
@@ -37,7 +31,6 @@ id_musician int,
 foreign key (id_album) references album_name (id_album),
 foreign key (id_musician) references musician_name (id_musician));
 
-drop table collection_name  cascade
 
 create table musical_genres(
 id_genres serial primary key,
@@ -56,5 +49,5 @@ leght_sec int not null);
 create table collection_name(
 id_collection serial primary key,
 collection_name varchar (100) not null,
-year date not null);
+year int2 not null);
  
